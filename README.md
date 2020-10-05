@@ -11,8 +11,14 @@ Esto es Nibble Evaluator, una app desarrollada para evaluar código desarrollado
 - La app solamente evalua con salidas esperadas definidas en el source de la app
 
 
-# Desarrollado por 
+# Desarrollado por
 - Marcelo de Jesús Núñez - @chelo154
 - José Agustín Sánchez -
 - Germán Navarro Alascio
 - Iván Arturo Taddei
+
+# Requerimientos
+
+## Software necesario
+
+- MinGW para Windows (Este compilador es exclusivo de Windows, la razón de su uso es que la cátedra de AED usa este compilador. Se puede usar g++ también si se desea)
