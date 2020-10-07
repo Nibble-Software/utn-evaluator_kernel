@@ -5,16 +5,17 @@ import domain.code_test_status
 from domain.runners.cpprunner import CppRunner
 from domain.tester import Tester
 from domain.code_test_status import TestStatus
+from domain.file_reader import FileReader
 
 def test_file(path_evaluated_file,path_inputs,path_expected_outputs):
 
-    FileReader.read_files(path_inputs,path_expected_outputs)
+    program_data = FileReader.read_files(path_inputs,path_expected_outputs)
 
     cpp_runner = CppRunner(path_evaluated_file)
 
     resultado = cpp_runner.run_progam()
 
-    tester = Tester(path_expected_outputs,resultado)
+    tester = Tester(program_data['outputs'],resultado)
 
     test_passed = tester.test_code()
 

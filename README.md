@@ -3,12 +3,37 @@ Esto es Nibble Evaluator, una app desarrollada para evaluar código desarrollado
 
 # Status del Proyecto
 
-### Version 1.0
+### Anuncios Versión 1.1
 
 - La app puede compilar y ejecutar en C++
-- La app solamente puede ejecutar un archivo definido dentro del código de la app
-- La app solamente puede ejecutar archivos en C++ que no reciben Inputs
-- La app solamente evalua con salidas esperadas definidas en el source de la app
+- La app puede leer archivos de entrada y salida en formato txt
+- La app puede leer multiples salidas obtenidas del ejecutable de C++
+- La app aun no puede insertar las entradas definidas en el proceso
+- Se pueden ejecutar pruebas sobre código cpp que no tenga que recibir valores de entradas
+
+# Requisitos de los archivos de entrada y salida
+
+## Formato del archivo de output esperados
+- El archivo debe estar en formato .txt
+- El archivo debe indicar textualmente la cadena con la salida esperada
+- Los saltos de lineas se representan haciendo un salto de linea en el txt
+
+### Ejemplo
+Si quiero recibir los numeros del 1 al 5 de forma secuencial se debe mostrar así
+
+```
+1 2 3 4 5
+```
+
+En cambio si deseo recibirlos linea por linea se debe mostrar así
+
+```
+1
+2
+3
+4
+5
+```
 
 
 # Desarrollado por

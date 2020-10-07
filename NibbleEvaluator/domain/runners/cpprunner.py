@@ -24,17 +24,24 @@ class CppRunner(Runner):
 
     def compile_program(self,path_to_compile):
 
-        os.system("g++ {path} -o {executable}".format(path=path_to_compile,executable =self.DEFAULT_EXECUTABLE_PATH))
+        os.system("g++ {path} -o {executable}".format(
+        path=path_to_compile,
+        executable =self.DEFAULT_EXECUTABLE_PATH)
+
+        )
 
     ########
 
     def execute_program(self,path_to_execute):
 
-        data = subprocess.Popen(path_to_execute, stdout=subprocess.PIPE).communicate()[0]
+        output = []
+        process = subprocess.Popen(path_to_execute, stdout=subprocess.PIPE)
+        data = [item.decode("latin1").strip() for item in process.stdout]
 
-        output = data.decode("latin1")
 
-        return output
+
+
+        return data
 
 
     pass

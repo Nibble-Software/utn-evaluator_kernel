@@ -10,12 +10,35 @@ class Test1(unittest.TestCase):
 
         path_input = "Input"
 
-        expected_output = "¡HOLA MUNDO!"
+        path_expected_output = "C:\\Users\\Chelo\\Documents\\TestFiles\\Outputs.txt"
 
         expected_test_output = TestStatus.TEST_PASSED
-        real_test_output = nibble_evaluator.test_file(path_evaluated_file,path_input,expected_output)
+        real_test_output = nibble_evaluator.test_file(path_evaluated_file,None,path_expected_output)
 
         print(real_test_output)
+        self.assertEqual(expected_test_output,real_test_output)
+
+
+    def test_multiple_outputs(self):
+
+        path_evaluated_file = "C:\\Users\\Chelo\\Documents\\TestFiles\\HolaMundo2.cpp"
+        path_expected_output = "C:\\Users\\Chelo\\Documents\\TestFiles\\HolaMundo2Outputs.txt"
+
+        expected_test_output = TestStatus.TEST_PASSED
+        real_test_output = nibble_evaluator.test_file(path_evaluated_file,None,path_expected_output)
+
+        self.assertEqual(expected_test_output,real_test_output)
+
+
+    def test_one_to_five(self):
+
+        path_evaluated_file = "C:\\Users\\Chelo\\Documents\\TestFiles\\OneToFive.cpp"
+        path_expected_output = "C:\\Users\\Chelo\\Documents\\TestFiles\\OneToFiveOutputs.txt"
+
+        expected_test_output = TestStatus.TEST_PASSED
+
+        real_test_output = nibble_evaluator.test_file(path_evaluated_file,None,path_expected_output)
+
         self.assertEqual(expected_test_output,real_test_output)
 
     pass
