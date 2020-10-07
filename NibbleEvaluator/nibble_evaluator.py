@@ -8,6 +8,8 @@ from domain.code_test_status import TestStatus
 
 def test_file(path_evaluated_file,path_inputs,path_expected_outputs):
 
+    FileReader.read_files(path_inputs,path_expected_outputs)
+
     cpp_runner = CppRunner(path_evaluated_file)
 
     resultado = cpp_runner.run_progam()
