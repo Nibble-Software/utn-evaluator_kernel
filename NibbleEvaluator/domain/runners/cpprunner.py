@@ -10,19 +10,21 @@ class CppRunner(Runner):
     def __init__(self,path_to_run_file):
         Runner.__init__(self,path_to_run_file)
 
+        ##Change DEFAULT_EXECUTABLE_PATH according to your preffered path
+        self.DEFAULT_EXECUTABLE_PATH = "C:\\Users\\Chelo\\AppData\\Local\\Temp\\cpprun.exe"
+
     #########
     def run_progam(self):
         execute_path = self.compile_program(self.get_file_path())
 
-        output = self.execute_program(execute_path)
+        output = self.execute_program(self.DEFAULT_EXECUTABLE_PATH)
 
         return output
     ########
 
     def compile_program(self,path_to_compile):
-        os.system("g++ {path} -o C:\\Users\\Chelo\\Documents\\TestFiles\\a.exe".format(path=path_to_compile) )
 
-        return "C:\\Users\\Chelo\\Documents\\TestFiles\\a.exe"
+        os.system("g++ {path} -o {executable}".format(path=path_to_compile,executable =self.DEFAULT_EXECUTABLE_PATH))
 
     ########
 

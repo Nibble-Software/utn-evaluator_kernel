@@ -17,10 +17,9 @@ def test_file(path_evaluated_file,path_inputs,path_expected_outputs):
     test_passed = tester.test_code()
 
     if test_passed:
-        return {'status': TestStatus.TEST_PASSED, 'percentaje' : 100.00}
-    else:        
-        return {'status': TestStatus.TEST_FAILED, 'percentaje' : 0.00}
-
+        return TestStatus.TEST_PASSED;
+    else:
+        return TestStatus.TEST_FAILED;
 
 
 

@@ -12,10 +12,10 @@ class Test1(unittest.TestCase):
 
         expected_output = "¡HOLA MUNDO!"
 
-        expected_test_output = {'status': TestStatus.TEST_PASSED, 'percentaje' : 100.00}
-
+        expected_test_output = TestStatus.TEST_PASSED
         real_test_output = nibble_evaluator.test_file(path_evaluated_file,path_input,expected_output)
 
+        print(real_test_output)
         self.assertEqual(expected_test_output,real_test_output)
 
     pass
