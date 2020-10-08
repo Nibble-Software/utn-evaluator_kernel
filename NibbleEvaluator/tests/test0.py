@@ -1,9 +1,11 @@
 import sys
+sys.path.append("..")
 import unittest
-import nibble_evaluator
+from app import nibble_evaluator
 import os
 from domain.code_test_status import TestStatus
 from domain.runners.cpprunner import CppRunner
+
 
 class Test0(unittest.TestCase):
 
