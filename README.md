@@ -8,8 +8,12 @@ Esto es Nibble Evaluator, una app desarrollada para evaluar código desarrollado
 - La app puede compilar y ejecutar en C++
 - La app puede leer archivos de entrada y salida en formato txt
 - La app puede leer multiples salidas obtenidas del ejecutable de C++
-- La app aun no puede insertar las entradas definidas en el proceso
+- La app puede ingresar entradas en el ejecutable de C++ generado
 - Se pueden ejecutar pruebas sobre código cpp que no tenga que recibir valores de entradas
+
+### Consideraciones
+- El sistema puede recibir programas en C que pidan un conjunto de entradas y luego
+muestren las salidas. Esto es, no se puede ingresar datos y mostrar datos de forma desordenada, la razón por la que actualmente esto no es soportado es debido a problemas de abrazo mortal con el subproceso
 
 # Requisitos de los archivos de entrada y salida
 

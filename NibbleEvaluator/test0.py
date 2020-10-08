@@ -9,7 +9,7 @@ class Test0(unittest.TestCase):
 
     def test_1(self):
         path = "C:\\Users\\Chelo\\Documents\\TestFiles\\HolaMundo.cpp"
-        cpp_runner = CppRunner(path)
+        cpp_runner = CppRunner(path,None)
         cpp_runner.compile_program(path)
 
 

@@ -33,6 +33,18 @@ class Test0(unittest.TestCase):
 
         self.assertEqual(expected_test_output,real_test_output)
 
+    def test_for_sum(self):
+
+        path_evaluated_file = "C:\\Users\\Chelo\\Documents\\TestFiles\\InputsTest\\ForSum.cpp"
+        path_inputs_file = "C:\\Users\\Chelo\\Documents\\TestFiles\\InputsTest\\ForSumInputs.txt"
+        path_expected_output = "C:\\Users\\Chelo\\Documents\\TestFiles\\InputsTest\\ForSumOutputs.txt"
+
+        expected_test_output = TestStatus.TEST_PASSED
+
+        real_test_output = nibble_evaluator.test_file(path_evaluated_file,path_inputs_file,path_expected_output)
+
+        self.assertEqual(expected_test_output,real_test_output)
+
     pass
 
 unittest.main()
