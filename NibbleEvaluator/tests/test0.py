@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 import unittest
-from app import nibble_evaluator
+import main
 import os
 from domain.code_test_status import TestStatus
 from domain.runners.cpprunner import CppRunner

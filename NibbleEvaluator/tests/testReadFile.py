@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 import unittest
-from app import nibble_evaluator
+import main
 from domain.code_test_status import TestStatus
 from domain.file_reader import FileReader
 

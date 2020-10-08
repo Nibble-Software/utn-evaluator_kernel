@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 import unittest
-from app import nibble_evaluator
+import main
 import os
 from domain.code_test_status import TestStatus
 from domain.runners.cpprunner import CppRunner
@@ -16,7 +16,7 @@ class Test0(unittest.TestCase):
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = nibble_evaluator.test_file(path_evaluated_file,path_inputs_file,path_expected_output)
+        real_test_output = main.test_file(path_evaluated_file,path_inputs_file,path_expected_output)
 
         self.assertEqual(expected_test_output,real_test_output)
 
@@ -30,7 +30,7 @@ class Test0(unittest.TestCase):
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = nibble_evaluator.test_file(path_evaluated_file,path_inputs_file,path_expected_output)
+        real_test_output = main.test_file(path_evaluated_file,path_inputs_file,path_expected_output)
 
         self.assertEqual(expected_test_output,real_test_output)
 
@@ -42,7 +42,7 @@ class Test0(unittest.TestCase):
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = nibble_evaluator.test_file(path_evaluated_file,path_inputs_file,path_expected_output)
+        real_test_output = main.test_file(path_evaluated_file,path_inputs_file,path_expected_output)
 
         self.assertEqual(expected_test_output,real_test_output)
 
