@@ -11,7 +11,7 @@ def test_file(path_evaluated_file,path_inputs,path_expected_outputs):
 
     program_data = FileReader.read_files(path_inputs,path_expected_outputs)
 
-    cpp_runner = CppRunner(path_evaluated_file)
+    cpp_runner = CppRunner(path_evaluated_file,program_data['inputs'])
 
     resultado = cpp_runner.run_progam()
 
