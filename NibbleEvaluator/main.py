@@ -15,4 +15,5 @@ def test_file(path_evaluated_file,path_inputs,path_expected_outputs):
 
 
 if __name__ == '__main__':
-    test_file("A","B","C")
+    output = test_file(argv[1],argv[2],argv[3])
+    print(output)

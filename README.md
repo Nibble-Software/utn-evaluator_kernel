@@ -3,17 +3,30 @@ Esto es Nibble Evaluator, una app desarrollada para evaluar código desarrollado
 
 # Status del Proyecto
 
-### Anuncios Versión 0.1
+### Anuncios Versión 0.3
 
 - La app puede compilar y ejecutar en C++
 - La app puede leer archivos de entrada y salida en formato txt
 - La app puede leer multiples salidas obtenidas del ejecutable de C++
 - La app puede ingresar entradas en el ejecutable de C++ generado
 - Se pueden ejecutar pruebas sobre código cpp que no tenga que recibir valores de entradas
+- El sistema puede aceptar entradas y salidas en cualquier orden (Revisar con mas ejemplos)
+- Ya esta disponible la CLI para usar el módulo
 
-### Consideraciones
-- El sistema puede recibir programas en C que pidan un conjunto de entradas y luego
-muestren las salidas. Esto es, no se puede ingresar datos y mostrar datos de forma desordenada, la razón por la que actualmente esto no es soportado es debido a problemas de abrazo mortal con el subproceso
+# Uso del CLI
+El CLI recibe tres parámetros:
+- La ruta del archivo .cpp a ser ejecutada
+- La ruta del archivo txt de entradas
+- La ruta del archivo txt de salidas esperadas
+
+Las rutas deben ser escritas de forma Absoluta
+
+Ejemplo de uso
+```sh
+#Ubicados en la ruta de nibble Evaluator
+python main.py "C:\Users\Alpha\Ejemplo.cpp" "C:\Users\Alpha\Inputs.cpp C:\Users\Alpha\Outputs.cpp"
+```
+
 
 # Requisitos de los archivos de entrada y salida
 
