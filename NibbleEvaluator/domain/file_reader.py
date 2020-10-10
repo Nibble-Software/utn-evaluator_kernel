@@ -1,9 +1,6 @@
 import os
 
-class FileReader():
-
-    def special_strings():
-        return "\n\r"
+class FileReader():    
 
     def read_files(path_input_file,path_output_file):
 
@@ -27,16 +24,19 @@ class FileReader():
 
             results = {'inputs': None, 'outputs' : outputs}
 
-            output_file.close()           
+            output_file.close()
 
 
         return results
 
     def read_lines(file):
 
-        lines = [item.decode('utf-8').strip() for item in file]
+        lines = FileReader.get_file_lines(file)
 
         return lines
 
+    def get_file_lines(file):
+
+        return [item.decode('utf-8').strip() for item in file]
 
     pass
