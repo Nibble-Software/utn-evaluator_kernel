@@ -5,9 +5,9 @@ import domain.code_test_status
 from domain.tester import Tester
 
 
-def test_file(path_evaluated_file,path_inputs,path_expected_outputs):
+def test_file(language,path_evaluated_file,path_inputs,path_expected_outputs):
 
-    tester = Tester(path_evaluated_file,path_inputs,path_expected_outputs)
+    tester = Tester(language,path_evaluated_file,path_inputs,path_expected_outputs)
     status = tester.run_test()
     return status
 

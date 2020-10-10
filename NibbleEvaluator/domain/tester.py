@@ -2,14 +2,15 @@ from domain.file_reader import FileReader
 from domain.runners.cpprunner import CppRunner
 from domain.code_test_status import TestStatus
 from domain import exceptions
+from domain.runnercreator import RunnerCreator
 
 class Tester():
 
-    def __init__(self,path_evaluated_file,path_inputs_file,path_expected_outputs_file):
+    def __init__(self,language,path_evaluated_file,path_inputs_file,path_expected_outputs_file):
 
         program_data = FileReader.read_files(path_inputs_file,path_expected_outputs_file)
 
-        self.runner = CppRunner(path_evaluated_file,program_data['inputs'])
+        self.runner = RunnerCreator.create_runner(language,path_evaluated_file,program_data['inputs'])
 
         self.expected_output = program_data['outputs']
 

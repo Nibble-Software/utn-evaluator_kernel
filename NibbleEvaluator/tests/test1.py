@@ -14,9 +14,9 @@ class Test1(unittest.TestCase):
         path_expected_output = "C:\\Users\\Chelo\\Documents\\TestFiles\\Outputs.txt"
 
         expected_test_output = TestStatus.TEST_PASSED
-        real_test_output = main.test_file(path_evaluated_file,None,path_expected_output)
+        real_test_output = main.test_file("c++",path_evaluated_file,None,path_expected_output)
 
-        
+
         self.assertEqual(expected_test_output,real_test_output)
 
 
@@ -26,7 +26,7 @@ class Test1(unittest.TestCase):
         path_expected_output = "C:\\Users\\Chelo\\Documents\\TestFiles\\HolaMundo2Outputs.txt"
 
         expected_test_output = TestStatus.TEST_PASSED
-        real_test_output = main.test_file(path_evaluated_file,None,path_expected_output)
+        real_test_output = main.test_file("c++",path_evaluated_file,None,path_expected_output)
 
         self.assertEqual(expected_test_output,real_test_output)
 
@@ -38,7 +38,7 @@ class Test1(unittest.TestCase):
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = main.test_file(path_evaluated_file,None,path_expected_output)
+        real_test_output = main.test_file("c++",path_evaluated_file,None,path_expected_output)
 
         self.assertEqual(expected_test_output,real_test_output)
 

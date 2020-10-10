@@ -3,7 +3,7 @@ Esto es Nibble Evaluator, una app desarrollada para evaluar código desarrollado
 
 # Status del Proyecto
 
-### Anuncios Versión 0.4
+### Anuncios Versión 0.5
 
 - La app puede compilar y ejecutar en C++
 - La app puede leer archivos de entrada y salida en formato txt
@@ -14,6 +14,7 @@ Esto es Nibble Evaluator, una app desarrollada para evaluar código desarrollado
 - Ya esta disponible la CLI para usar el módulo
 - La app puede detectar errores de compilación y ejecución,
   devolviendo un status cuando ocurre alguno de los dos errores
+- La app ahora ejecuta scripts de python
 
 
 # Uso del CLI
