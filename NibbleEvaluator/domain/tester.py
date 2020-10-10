@@ -1,6 +1,7 @@
 from domain.file_reader import FileReader
 from domain.runners.cpprunner import CppRunner
 from domain.code_test_status import TestStatus
+from domain import exceptions
 
 class Tester():
 
@@ -24,12 +25,25 @@ class Tester():
 
     def run_test(self):
 
-        self.real_output = self.runner.run_progam()
+        try:
 
-        status = self.test_code()
+            self.real_output = self.runner.run_progam()
 
-        return status
+            status = self.test_code()
 
+            return status
+
+        except exceptions.CompilationError :
+
+            status = TestStatus.COMPILATION_ERROR
+
+            return status
+
+        except exceptions.ExecutionError:
+
+            status = TestStatus.EXECUTION_ERROR
+
+            return status
 
 
     pass

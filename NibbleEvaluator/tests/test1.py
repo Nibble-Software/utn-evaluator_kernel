@@ -16,7 +16,7 @@ class Test1(unittest.TestCase):
         expected_test_output = TestStatus.TEST_PASSED
         real_test_output = main.test_file(path_evaluated_file,None,path_expected_output)
 
-        print(real_test_output)
+        
         self.assertEqual(expected_test_output,real_test_output)
 
 
