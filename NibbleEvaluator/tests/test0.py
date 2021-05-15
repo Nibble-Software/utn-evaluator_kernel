@@ -1,20 +1,28 @@
-import sys
-sys.path.append("..")
 import unittest
-import main
-import os
-from domain.code_test_status import TestStatus
 from domain.runners.cpprunner import CppRunner
+from tests.file_mocker import mock_cpp_file
 
 
 class Test0(unittest.TestCase):
 
     def test_1(self):
-        path = "C:\\Users\\Chelo\\Documents\\TestFiles\\HolaMundo.cpp"
-        cpp_runner = CppRunner(path,None)
-        cpp_runner.compile_program(path)
+        code = '''
+#include <stdio.h>
 
+int main()
+{
+  printf("¡HOLA MUNDO!");
+  return 0;
+
+}
+'''
+        code_path = mock_cpp_file(code)
+
+        cpp_runner = CppRunner(code_path, None)
+        cpp_runner.compile_program(code_path)
 
     pass
 
+
 unittest.main()
+

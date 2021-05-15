@@ -12,7 +12,7 @@ class CppRunner(Runner):
         Runner.__init__(self,path_to_run_file,inputs)
 
         ##Change DEFAULT_EXECUTABLE_PATH according to your preffered path
-        self.DEFAULT_EXECUTABLE_PATH = "C:\\Users\\Chelo\\AppData\\Local\\Temp\\cpprun.exe"
+        self.DEFAULT_EXECUTABLE_PATH = "/tmp/cpprun.out"
 
     #########
     def run_progam(self):
@@ -25,9 +25,9 @@ class CppRunner(Runner):
 
     def compile_program(self,path_to_compile):
 
-        process_status_code = subprocess.call(self.formatted_file(path_to_compile))
+        process_status_code = subprocess.call(['g++', self.get_file_path(), '-o', self.DEFAULT_EXECUTABLE_PATH])
 
-        if(self.execution_failed(process_status_code)):
+        if self.execution_failed(process_status_code):
 
             raise exceptions.CompilationError
 

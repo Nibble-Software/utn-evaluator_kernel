@@ -10,6 +10,10 @@ class Test0(unittest.TestCase):
 
     def test_failed_compilation(self):
 
+        code = '''
+
+'''
+
         path_evaluated_file = "G:\\TestFiles\\SumaIndeterminadaFailedCompilation.cpp"
         path_inputs_file = "G:\\TestFiles\\Inputs.txt"
         path_expected_output = "G:\\TestFiles\\Outputs.txt"

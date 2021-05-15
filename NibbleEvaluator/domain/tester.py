@@ -16,7 +16,8 @@ class Tester():
 
 
     def test_code(self):
-
+        data = {"expected": self.expected_output, "real": self.real_output}
+        print(data)
         if self.expected_output == self.real_output:
             return TestStatus.TEST_PASSED
 
