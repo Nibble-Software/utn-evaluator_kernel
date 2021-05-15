@@ -93,13 +93,26 @@ class Runner():
     ########
 
     def read_outputs_after_inputs(self,process):
-        data, err = process.communicate(timeout=15)
-        data = data.decode("latin1").split('\n')
-        print(data)
-        data = [item for item in data if item != '']
-        #data = [item.decode(sys.stdout.encoding).rstrip() for item in process.stdout]
+        try:
+            data, err = process.communicate(timeout=15)
 
-        return data
+            data = data.decode("latin1").split('\n')
+
+            data = [item for item in data if item != '']
+
+            process.stdout.close()
+            process.terminate()
+
+            return data
+
+        except subprocess.TimeoutExpired as timeout:
+
+            print("Entra")
+            process.stdout.close()
+            process.terminate()
+            process.communicate()
+
+            raise timeout
 
     ########
     def format_inputs_for_stdin(self):
