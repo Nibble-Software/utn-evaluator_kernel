@@ -33,10 +33,11 @@ class Runner():
 
     def create_process(self,executable_path):
 
-        return subprocess.Popen(executable_path,
+        process = subprocess.Popen(executable_path,
                 stdout=subprocess.PIPE,stdin=subprocess.PIPE,
                 stderr=subprocess.PIPE)
 
+        return process
 
     ##########
 
@@ -56,31 +57,47 @@ class Runner():
 
         process.stdin.write(input_string.encode('utf-8'))
 
-        process.stdin.close()
 
     ##########
 
     def read_outputs(self,process):
 
-        data = [item.decode("latin1").strip() for item in process.stdout]
-
-        process.stdout.close()
-        process.terminate()
+        try:
+            data,err = process.communicate(timeout=15)
 
 
 
-        return data
+            data = data.decode("latin1").split('\n')
+
+            data = [item for item in data if item != '']
+
+            process.stdout.close()
+            process.terminate()
+
+            return data
+
+        except subprocess.TimeoutExpired as timeout:
+
+            print("Entra")
+            process.stdout.close()
+            process.terminate()
+            process.communicate()
+
+            raise timeout
+
+
+
+
+
 
     ########
 
     def read_outputs_after_inputs(self,process):
-
-        data = [item.decode(sys.stdout.encoding).rstrip() for item in process.stdout]
-
-        process.terminate()
-
-        process.stdout.close()
-        process.stderr.close()
+        data, err = process.communicate(timeout=15)
+        data = data.decode("latin1").split('\n')
+        print(data)
+        data = [item for item in data if item != '']
+        #data = [item.decode(sys.stdout.encoding).rstrip() for item in process.stdout]
 
         return data
 

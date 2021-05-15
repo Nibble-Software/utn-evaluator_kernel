@@ -1,4 +1,5 @@
 import unittest
+from subprocess import TimeoutExpired
 from domain.code_test_status import TestStatus
 import main
 from tests.file_mocker import *
@@ -79,6 +80,34 @@ return 0;
         self.assertEqual(expected_test_output, real_test_output)
 
     pass
+
+    def test_timeout(self):
+        code = '''
+    #include <stdio.h>
+
+    int main()
+    {
+      printf("HOLA MUNDO");
+      while(1);
+      return 0;
+
+    }
+    '''
+        output = "HOLA MUNDO"
+
+        code_path = mock_cpp_file(code)
+
+        output_path = mock_output_file(output)
+
+        expected_test_output = TestStatus.TEST_PASSED
+
+        try:
+            real_test_output = main.test_file("c++", code_path, None, output_path)
+
+        except TimeoutExpired as e:
+            print(e)
+
+
 
 
 unittest.main()
