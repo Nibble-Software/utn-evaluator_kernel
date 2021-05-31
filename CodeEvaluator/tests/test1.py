@@ -1,7 +1,7 @@
 import unittest
 from subprocess import TimeoutExpired
 from domain.code_test_status import TestStatus
-import main
+import codeevaluator
 from tests.file_mocker import *
 
 
@@ -26,7 +26,7 @@ int main()
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = main.test_file("c++", code_path, None, output_path)
+        real_test_output = codeevaluator.test_file("c++", code_path, None, output_path)
 
         self.assertEqual(expected_test_output, real_test_output)
 
@@ -50,7 +50,7 @@ int main()
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = main.test_file("c++", code_path, None, output_path)
+        real_test_output = codeevaluator.test_file("c++", code_path, None, output_path)
 
         self.assertEqual(expected_test_output, real_test_output)
 
@@ -75,7 +75,7 @@ return 0;
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = main.test_file("c++",code_path, None, output_path)
+        real_test_output = codeevaluator.test_file("c++", code_path, None, output_path)
 
         self.assertEqual(expected_test_output, real_test_output)
 
@@ -102,12 +102,8 @@ return 0;
         expected_test_output = TestStatus.TEST_PASSED
 
         try:
-            real_test_output = main.test_file("c++", code_path, None, output_path)
+            real_test_output = codeevaluator.test_file("c++", code_path, None, output_path)
 
         except TimeoutExpired as e:
             print(e)
 
-
-
-
-unittest.main()

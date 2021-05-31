@@ -1,7 +1,4 @@
-import os
-import subprocess
 from sys import argv
-import domain.code_test_status
 from domain.tester import Tester
 
 
@@ -12,8 +9,6 @@ def test_file(language,path_evaluated_file,path_inputs,path_expected_outputs):
     return status
 
 
-
-
 if __name__ == '__main__':
-    output = test_file(argv[1],argv[2],argv[3])
+    output = test_file(argv[1], argv[2], argv[3])
     print(output)

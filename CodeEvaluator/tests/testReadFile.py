@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 import unittest
-from domain.file_reader import FileReader
+import domain.file_reader as file_reader
 from tests.file_mocker import *
 
 class Test1(unittest.TestCase):
@@ -18,7 +18,7 @@ class Test1(unittest.TestCase):
 
         expected_result = {'inputs': ["1","2"], 'outputs': ["¡HOLA MUNDO!"]}
 
-        real_result = FileReader.read_files(input_path,output_path)
+        real_result = file_reader.FileReader.read_files(input_path,output_path)
 
         self.assertEqual(expected_result,real_result)
 
@@ -32,11 +32,11 @@ class Test1(unittest.TestCase):
 
         expected_result = {'inputs': None , 'outputs': ["¡HOLA MUNDO!"]}
 
-        real_result = FileReader.read_files(None, output_path)
+        real_result = file_reader.FileReader.read_files(None, output_path)
 
         self.assertEqual(expected_result,real_result)
 
     pass
 
 
-unittest.main()
+

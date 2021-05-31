@@ -1,6 +1,6 @@
 import unittest
-import main
-from domain.code_test_status import TestStatus
+from src import codeevaluator
+from src.domain.code_test_status import TestStatus
 from tests.file_mocker import *
 
 
@@ -35,9 +35,9 @@ return 0;
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = main.test_file("c++",code_path,input_path,output_path)
+        real_test_output = codeevaluator.test_file("c++", code_path, input_path, output_path)
 
-        self.assertEqual(expected_test_output,real_test_output)
+        self.assertEqual(str(expected_test_output),str(real_test_output))
 
     def test_calculator(self):
 
@@ -71,9 +71,9 @@ return 0;
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = main.test_file("c++",code_path,input_path,output_path)
+        real_test_output = codeevaluator.test_file("c++", code_path, input_path, output_path)
 
-        self.assertEqual(expected_test_output,real_test_output)
+        self.assertEqual(str(expected_test_output),str(real_test_output))
 
     def test_for_sum(self):
 
@@ -113,11 +113,9 @@ return 0;
 
         expected_test_output = TestStatus.TEST_PASSED
 
-        real_test_output = main.test_file("c++", code_path, input_path, output_path)
+        real_test_output = codeevaluator.test_file("c++", code_path, input_path, output_path)
 
-        self.assertEqual(expected_test_output, real_test_output)
+        self.assertEqual(str(expected_test_output), str(real_test_output))
 
     pass
 
-
-unittest.main()
