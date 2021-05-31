@@ -90,9 +90,4 @@ class CppRunner(Runner):
 
         return "g++ {path} -o {executable}".format(path=path_to_compile,executable =self.DEFAULT_EXECUTABLE_PATH)
 
-
-
-
-
-
     pass
