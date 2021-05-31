@@ -60,8 +60,6 @@ class PyRunner(Runner):
 
             raise exceptions.ExecutionError
 
-
-
         return data
 
     def formatted_file(self):
@@ -76,5 +74,5 @@ class PyRunner(Runner):
 
         process.stdin.close()
 
-
     pass
+
