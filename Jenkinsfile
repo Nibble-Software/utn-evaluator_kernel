@@ -1,5 +1,5 @@
 pipeline{
-    agent {docker {image 'python:3.8.10-alpine'}}
+    agent {docker {image 'chelo154/codeevaluator-kernel-test:0.0.1'}}
 
     stages{
 
