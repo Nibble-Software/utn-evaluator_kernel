@@ -6,12 +6,12 @@ pipeline{
         stage ("build"){
             steps{
                 echo 'building enviroment'                               
-                sh 'apt install python3'
-                sh 'apt install pip3'
+                sh 'sudo apt install python3'
+                sh 'sudo apt install pip3'
                 sh 'pip3 install unittest'
             }
         }
-        
+
         stage("test"){
             steps{
                 echo 'testing file'
