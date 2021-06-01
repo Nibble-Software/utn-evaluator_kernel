@@ -2,6 +2,15 @@ pipeline{
     agent any
 
     stages{
+
+        stage ("configuration"){
+            steps{
+                echo 'configuring enviroment'
+                sh 'apt install python3'
+                sh 'apt install pip3'
+                sh 'pip3 install unittest'
+            }
+        }
         stage("test"){
             steps{
                 echo 'testing file'
