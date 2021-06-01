@@ -11,9 +11,8 @@ pipeline{
         }
         stage("test"){
             steps{
-                echo 'testing file'
-                sh 'cd /var/jenkins_home/workspace/eline-evaluator-kernel_developer/CodeEvaluator'
-                sh 'python -m unittest discover'                
+                echo 'testing file'                
+                sh 'python -m unittest discover /var/jenkins_home/workspace/eline-evaluator-kernel_developer/CodeEvaluator'                
             }
         }
         stage("build-library"){
