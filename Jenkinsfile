@@ -6,7 +6,7 @@ pipeline{
         stage ("build"){
             steps{
                 echo 'building enviroment'                               
-                sh 'pip install unittest'
+                
             }
         }
         stage("test"){
