@@ -5,7 +5,9 @@ pipeline{
 
         stage ("build"){
             steps{
-                echo 'building enviroment'                               
+                echo 'building enviroment'
+                sh 'yum install gcc g++ -y'
+                                          
                 
             }
         }
