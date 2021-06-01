@@ -1,5 +1,5 @@
 import unittest
-from domain.runners.cpprunner import CppRunner
+from src.domain.runners.cpprunner import CppRunner
 from tests.file_mocker import mock_cpp_file
 
 

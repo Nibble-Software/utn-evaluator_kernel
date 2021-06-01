@@ -1,5 +1,5 @@
 from sys import argv
-from domain.tester import Tester
+from src.domain.tester import Tester
 
 
 def test_file(language,path_evaluated_file,path_inputs,path_expected_outputs):

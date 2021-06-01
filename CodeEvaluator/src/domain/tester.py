@@ -1,7 +1,7 @@
-import domain.file_reader as file_reader
-import domain.code_test_status as test_status
-import domain.exceptions as exceptions
-import domain.runnercreator as runner_creator
+import src.domain.file_reader as file_reader
+import src.domain.code_test_status as test_status
+import src.domain.exceptions as exceptions
+import src.domain.runnercreator as runner_creator
 
 
 class Tester:
