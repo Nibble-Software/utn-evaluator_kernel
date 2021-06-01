@@ -1,22 +1,19 @@
 pipeline{
-    agent any
+    agent {docker {image 'python:3.8.10-alpine'}}
 
     stages{
 
         stage ("build"){
             steps{
                 echo 'building enviroment'                               
-                sh 'sudo apt install python3'
-                sh 'sudo apt install pip3'
-                sh 'pip3 install unittest'
+                sh 'pip install unittest'
             }
         }
-
         stage("test"){
             steps{
                 echo 'testing file'
                 sh 'cd CodeEvaluator'
-                sh 'python3 -m unittest discover test'                
+                sh 'python -m unittest discover test'                
             }
         }
         stage("build-library"){
