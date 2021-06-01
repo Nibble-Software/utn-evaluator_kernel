@@ -16,7 +16,7 @@ pipeline{
                 sh 'python -m unittest discover test'                
             }
         }
-        stage("build"){
+        stage("build-project"){
             steps{
                 echo 'building project'
             }
