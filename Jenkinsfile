@@ -18,17 +18,17 @@ pipeline{
                 sh 'python3 -m unittest discover test'                
             }
         }
-        stage("build"){
+        stage("build-library"){
             steps{
                 echo 'building project'
             }
         }
-        stage("test-build"){
+        stage("test-library"){
             steps{
                 echo 'testing build'
             }
         }
-        stage("publish"){
+        stage("publish-library"){
             steps{
                 echo 'publishing in pip'
             }
