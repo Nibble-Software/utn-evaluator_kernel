@@ -13,7 +13,7 @@ pipeline{
             steps{
                 echo 'testing file'
                 sh 'cd CodeEvaluator'
-                sh 'python -m unittest discover test'                
+                sh 'python -m unittest discover tests'                
             }
         }
         stage("build-library"){
