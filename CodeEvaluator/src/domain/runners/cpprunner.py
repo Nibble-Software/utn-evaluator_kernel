@@ -1,5 +1,5 @@
 from .runner import Runner
-import src.domain.exceptions as exceptions
+import domain.exceptions as exceptions
 import subprocess
 
 

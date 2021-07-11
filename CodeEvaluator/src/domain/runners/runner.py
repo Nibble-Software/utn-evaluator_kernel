@@ -47,8 +47,6 @@ class Runner():
         try:
             data,err = process.communicate(timeout=15)
 
-
-
             data = data.decode("latin1").split('\n')
 
             data = [item for item in data if item != '']

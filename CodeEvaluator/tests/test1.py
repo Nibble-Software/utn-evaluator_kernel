@@ -24,9 +24,9 @@ int main()
 
         output_path = mock_output_file(output)
 
-        expected_test_output = TestStatus.TEST_PASSED
+        expected_test_output = str(TestStatus.TEST_PASSED)
 
-        real_test_output = codeevaluator.test_file("c++", code_path, None, output_path)
+        real_test_output = str(codeevaluator.test_file("c++", code_path, None, output_path))
 
         self.assertEqual(expected_test_output, real_test_output)
 
@@ -48,9 +48,9 @@ int main()
 
         output_path = mock_output_file(output)
 
-        expected_test_output = TestStatus.TEST_PASSED
+        expected_test_output = str(TestStatus.TEST_PASSED)
 
-        real_test_output = codeevaluator.test_file("c++", code_path, None, output_path)
+        real_test_output = str(codeevaluator.test_file("c++", code_path, None, output_path))
 
         self.assertEqual(expected_test_output, real_test_output)
 
@@ -73,9 +73,9 @@ return 0;
 
         output_path = mock_output_file(output)
 
-        expected_test_output = TestStatus.TEST_PASSED
+        expected_test_output = str(TestStatus.TEST_PASSED)
 
-        real_test_output = codeevaluator.test_file("c++", code_path, None, output_path)
+        real_test_output = str(codeevaluator.test_file("c++", code_path, None, output_path))
 
         self.assertEqual(expected_test_output, real_test_output)
 

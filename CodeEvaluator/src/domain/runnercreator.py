@@ -1,5 +1,5 @@
-from src.domain.runners.cpprunner import CppRunner
-from src.domain.runners.pyrunner import PyRunner
+from domain.runners.cpprunner import CppRunner
+from domain.runners.pyrunner import PyRunner
 
 class RunnerCreator():
 

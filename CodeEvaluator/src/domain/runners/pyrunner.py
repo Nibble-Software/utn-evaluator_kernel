@@ -48,6 +48,8 @@ class PyRunner(Runner):
 
         input_string = self.format_inputs_for_stdin()
 
+        print(input_string)
+
         self.write_inputs(process,input_string)
 
         data = self.read_outputs_after_inputs(process)
@@ -64,15 +66,8 @@ class PyRunner(Runner):
 
     def formatted_file(self):
 
-        return "python {path}".format(path = self.get_file_path())
+        return ["python3",self.get_file_path()]
 
-    def write_inputs(self,process,input_string):
-
-        for item in self.get_inputs():
-            string = item +"\n"
-            process.stdin.write(string.encode('utf-8'))
-
-        process.stdin.close()
 
     pass
 
