@@ -1,0 +1,4 @@
+
+class ExecutionError(Exception):
+
+    pass

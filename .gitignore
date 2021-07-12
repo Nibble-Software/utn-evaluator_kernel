@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Código de c++
+.cpp
+
+# Ejecutables
+.exe
