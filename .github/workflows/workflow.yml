@@ -19,5 +19,5 @@ jobs:
         
     - name: Testing App
       run: |
-        cd CodeEvaluator && python -m unittest discover     
+        cd CodeEvaluator/src && python -m unittest discover tests     
   
