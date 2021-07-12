@@ -1,8 +1,6 @@
-import sys
-sys.path.append("..")
 import unittest
-from src import codeevaluator
-from src.domain.code_test_status import TestStatus
+import codeevaluator
+from domain.code_test_status import TestStatus
 
 
 class Test0(unittest.TestCase):

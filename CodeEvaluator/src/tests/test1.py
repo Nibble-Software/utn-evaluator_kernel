@@ -1,7 +1,7 @@
 import unittest
 from subprocess import TimeoutExpired
-from src.domain.code_test_status import TestStatus
-import src.codeevaluator as codeevaluator
+from domain.code_test_status import TestStatus
+import codeevaluator as codeevaluator
 from tests.file_mocker import *
 
 

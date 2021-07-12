@@ -1,6 +1,7 @@
+
 import unittest
-from src import codeevaluator
-from src.domain.code_test_status import TestStatus
+import codeevaluator
+from domain.code_test_status import TestStatus
 from tests.file_mocker import *
 
 
