@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 import unittest
-import src.domain.file_reader as file_reader
+import domain.file_reader as file_reader
 from tests.file_mocker import *
 
 class Test1(unittest.TestCase):

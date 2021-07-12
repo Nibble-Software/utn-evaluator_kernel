@@ -133,3 +133,6 @@ dmypy.json
 
 # Ejecutables
 .exe
+CodeEvaluator/.idea/
+
+CodeEvaluator/src/.idea/

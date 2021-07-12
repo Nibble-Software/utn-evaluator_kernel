@@ -19,6 +19,7 @@ pipeline{
         stage("build-library"){
             steps{
                 echo 'building project'
+                
             }
         }
         stage("test-library"){
